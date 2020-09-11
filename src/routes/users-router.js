@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Router from 'koa-router'
 
 import UserController from 'controllers/users-controller'

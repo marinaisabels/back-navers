@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import app from 'server'
 import process from 'process'
 

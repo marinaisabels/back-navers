@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Koa from 'koa'
 import Logger from 'koa-logger'
 import Cors from '@koa/cors'

@@ -4,7 +4,7 @@ import Role from './Role'
 import { baseModel, modelUuid } from './index'
 
 class Navers extends modelUuid(baseModel) {
-  static tableName = 'Navers'
+  static tableName = 'navers'
 
   static relationMapings = {
     role: {
