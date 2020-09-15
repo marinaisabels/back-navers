@@ -3,7 +3,7 @@
 
 _____
 ## 💻 Sobre os exercícios
-**[Exercício 1](https://docs.google.com/document/d/1p3Nm2wo6FRpTWeo0wETEVUzGTp8_30Gkp0VWNFu4h6Y/edit?ts=5f593ac8)**
+**[Exercício 1](https://docs.google.com/document/d/1p3Nm2wo6FRpTWeo0wETEVUzGTp8_30Gkp0VWNFu4h6Y/edit?ts=5f593ac8)** <br>
 **[Exercício 2](https://docs.google.com/document/d/1Kxze58Hm_yazWPEeUjpaCJJwPdtHx-Y937z_oeav410/edit)**
 ---
 
@@ -59,9 +59,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## Dificuldades 
 
--    Etapa 1 - Configurar as informações do Banco de dados no arquivo config.js:
+-    Etapa 1 - Configurar as informações do Banco de dados no arquivo config.js:<br>
 
- Na ausência do postgre, foi utilizado o mySQL. As informações foram alteradas 
+ Na ausência do postgre, foi utilizado o mySQL. As informações foram alteradas <br>
  com adição de novos dados para o banco, de acordo ao que o mySQL exige. 
 
 ```
@@ -71,9 +71,9 @@ export const DATABASE_NAME = process.env.DATABASE_NAME
 export const DB_PASSWORD = process.env.DB_PASSWORD 
 
 ``` 
-Os dados do banco também foram armazenados no arquivo .env
+Os dados do banco também foram armazenados no arquivo .env<br>
 
-Foi necessário criar uma variável no arquivo knexfile para o banco de dados.
+Foi necessário criar uma variável no arquivo knexfile para o banco de dados.<br>
 ```
 export const development = {
   client: 'mysql',
@@ -91,24 +91,24 @@ export const development = {
 ```
 
 
--   Etapa 2 - Criar o Model do Navers
-Foi criado o Model do Navers com o uuid, mas por questões de configurações
-o uuid foi retirado de todos os arquivos da pasta Model.
+-   Etapa 2 - Criar o Model do Navers<br>
+Foi criado o Model do Navers com o uuid, mas por questões de configurações<br>
+o uuid foi retirado de todos os arquivos da pasta Model.<br>
 
--   Etapa 3 - Criar o arquivo de Navers no Controller
+-   Etapa 3 - Criar o arquivo de Navers no Controller<br>
 
 Foi criado as seguintes rotas:
     -    index
     -    show    
     -    create
 
-Sem a necessidade de utilizar o arquivo helpers.
+Sem a necessidade de utilizar o arquivo helpers.<br>
 Na rota de criar naver foi retirado o role_id e não 
 foi possivel fazer a lógica de somente admin poder criar um novo naver.
 
--   Etapa 4 - Criar migrações com a rota de criar navers.
+-   Etapa 4 - Criar migrações com a rota de criar navers.<br>
 
--   Para criar uma migração é necessário utilizar os seguintes comandos:
+-   Para criar uma migração é necessário utilizar os seguintes comandos:<br>
 
 ```
 npm run migrate:make nome_do_arquivo
@@ -138,15 +138,15 @@ npm run db:seed
 
 ```
 
--   Etapa 5 - Organizar os arquivos de rotas 
+-   Etapa 5 - Organizar os arquivos de rotas <br>
 
-No arquivo index.js da pasta de Rotas foi adicionado a rota de navers, que precisa 
+No arquivo index.js da pasta de Rotas foi adicionado a rota de navers, que precisa <br>
 ser utilizado com v1 no parametro.
 
-Foi adicionado arquivo de rotas dos navers com informações do NaversControllers
+Foi adicionado arquivo de rotas dos navers com informações do NaversControllers<br>
 com os métodos GET e POST
 
- Para que nãoo seja necessário utilizar o token autenticação as rotas dos "navers" 
+ Para que nãoo seja necessário utilizar o token autenticação as rotas dos "navers" <br>
  foram colocadas no path do arquivo server.js
 
 
