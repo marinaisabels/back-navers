@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Koa from 'koa'
 import Logger from 'koa-logger'
 import Cors from '@koa/cors'
@@ -47,6 +46,8 @@ app.use(
       '/v1/users/forget',
       '/v1/users/reset',
       '/v1/navers/signup',
+      '/v1/navers',
+      '/v1/navers/:id',
       '/public'
     ]
   })

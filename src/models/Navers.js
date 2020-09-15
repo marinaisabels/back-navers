@@ -1,10 +1,10 @@
 import { Model } from 'objection'
 
 import Role from './Role'
-import { baseModel, modelUuid } from './index'
+import { baseModel} from './index'
 
-class Navers extends modelUuid(baseModel) {
-  static tableName = 'Navers'
+class Navers extends baseModel {
+  static tableName = 'navers'
 
   static relationMapings = {
     role: {

@@ -1,23 +1,21 @@
 import Navers from 'models/Navers'
 
-
-export const index = () => Navers.query().withGraphFetched('role')
+export const index = () => Navers.query()
 
 export const show = ctx =>
-  Navers.query().findOne({ id: ctx.params.id }).withGraphFetched('role')
-
+  Navers.query().findOne({ id: ctx.params.id })
+  
 export const create = async ctx => {
   const { body } = ctx.request
+
   return Navers.query().insert({
-    role_id: body.role_id,
     name: body.name,
-    birthday: body.birthday,
+    birthdate: body.birthdate,
     job_role: body.job_role,
     admission_date: body.admission_date,
-    projects: body.projects
+    projects: body.projects,
   })
 }
-
 
 export default {
   index,
