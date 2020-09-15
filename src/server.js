@@ -45,9 +45,6 @@ app.use(
       '/v1/users/signup',
       '/v1/users/forget',
       '/v1/users/reset',
-      '/v1/navers/signup',
-      '/v1/navers',
-      '/v1/navers/:id',
       '/public'
     ]
   })

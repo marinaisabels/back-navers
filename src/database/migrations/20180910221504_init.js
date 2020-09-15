@@ -5,7 +5,7 @@ export const up = knex =>
       table.string('role').notNullable()
     })
     .createTable('users', table => {
-      table.uuid('id').primary()
+      table.increments('id').primary()
       table.string('name').notNullable()
       table.string('email').unique().notNullable()
       table.string('password').notNullable()
