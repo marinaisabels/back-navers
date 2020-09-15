@@ -1,68 +1,154 @@
-# Node API boilerplate by nave.rs
+ <img style="border-radius: 50%;" src="https://raw.githubusercontent.com/marinaisabels/teste-navedex/master/logo.png" width="100px;" alt=""/>
 
-A boilerplate for building RESTful APIs using Node.js, PostgreSQL, koa, knex, objection.
 
-# Getting started
+_____
+## 💻 Sobre os exercícios
+**[Exercício 1](https://docs.google.com/document/d/1p3Nm2wo6FRpTWeo0wETEVUzGTp8_30Gkp0VWNFu4h6Y/edit?ts=5f593ac8)**
+**[Exercício 2](https://docs.google.com/document/d/1Kxze58Hm_yazWPEeUjpaCJJwPdtHx-Y937z_oeav410/edit)**
+---
 
-## Installation
+## ⚙️ Funcionalidades
 
-1. Install [Node.JS](https://nodejs.org/en/) LTS version
-2. Install PostgreSQL
-3. Clone this repository and enter on the respective folder
-4. Install dependencies running: `yarn` or `npm install`
+- Navers
 
-## Things to do before run the project:
+     - (Index) Rota para listagem dos Navers.
 
-1. Create database (by follow the commands):
+     - (Show) Rota para detalhar informações de um único naver através de seu identificador
 
-- CREATE USER `user` WITH PASSWORD `password`
-- CREATE DATABASE `database`
-- GRANT ALL PRIVILEGES ON DATABASE `database` to `user`
+     - (Create) Rota de Criação de Naver
 
-2. Install `citext` extension on your database with the command `CREATE EXTENSION citext;`
-3. Change name value of .env.example to .env and set the key SECRET to any value you wish
-4. Change DATABASE_URL to postgress://`user`:`password`@`localhost`/`database`
-5. Run migrations: `yarn db:migrate`
-6. Run seeds: `yarn db:seed`
-7. Run `yarn start` or `yarn dev` to start server
+---
 
-## Testing
 
-1. Run tests: `yarn test`
+#### 🎲 Rodando o Backend (servidor)
 
-## Directory Structure
+```bash
+
+# Clone este repositório
+$ git clone git@github.com/marinaisabels/back-navers/
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd desktop
+
+# Vá para a pasta 
+$ cd projeto
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+
+# O servidor inciará na porta:3000 - acesse http://localhost:3000
 
 ```
-├── /src
-|   ├── /controllers
-|   ├── /database
-|   |    ├── /migrations
-|   |    ├── /seeds
-|   ├── /helpers
-|   ├── /middleware
-|   ├── /models
-|   ├── /routes
-|   ├── /validators
-├── /test
+
+---
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+ 
+([NodeJS](https://nodejs.org/en/)  +  [Javascript](https://www.typescriptlang.org/))
+
+-   **[Koa](https://koajs.com/)**
+-   **[KnexJS](http://knexjs.org/)**
+-   **[MySQL](https://dev.mysql.com/doc/)**
+---
+
+
+## Dificuldades 
+
+-    Etapa 1 - Configurar as informações do Banco de dados no arquivo config.js:
+
+ Na ausência do postgre, foi utilizado o mySQL. As informações foram alteradas 
+ com adição de novos dados para o banco, de acordo ao que o mySQL exige. 
+
+```
+export const DATABASE = process.env.DATABASE_URL 
+export const DB_USER = process.env.DB_USER 
+export const DATABASE_NAME = process.env.DATABASE_NAME 
+export const DB_PASSWORD = process.env.DB_PASSWORD 
+
+``` 
+Os dados do banco também foram armazenados no arquivo .env
+
+Foi necessário criar uma variável no arquivo knexfile para o banco de dados.
+```
+export const development = {
+  client: 'mysql',
+  connection: {
+    host: 'amazonaws.com',
+    user: '######',
+    password: '######',
+    database: '#####'
+  },
+  migrations: {
+    directory: path.resolve(__dirname, 'migrations')
+  }
+}
+
 ```
 
-## Insomnia
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/aba33a508a2c4dff0754)
+-   Etapa 2 - Criar o Model do Navers
+Foi criado o Model do Navers com o uuid, mas por questões de configurações
+o uuid foi retirado de todos os arquivos da pasta Model.
 
-## Styleguide
+-   Etapa 3 - Criar o arquivo de Navers no Controller
 
-[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+Foi criado as seguintes rotas:
+    -    index
+    -    show    
+    -    create
 
-## Nodemailer
+Sem a necessidade de utilizar o arquivo helpers.
+Na rota de criar naver foi retirado o role_id e não 
+foi possivel fazer a lógica de somente admin poder criar um novo naver.
 
-To use the nodemailer helper in a non-production environment, you need to set the variable in .env `ALLOW_LIST` and assign an array with the domains allowed for sending e-mail. This domain must start with an `@`, followed by a minimum of 2 characters, a `.` and 2 characters in the end.
-In case the informed email is not part of any informed domain, the email will not be sent.
+-   Etapa 4 - Criar migrações com a rota de criar navers.
 
-### Examples:
+-   Para criar uma migração é necessário utilizar os seguintes comandos:
 
-- ALLOW_LIST=["@nave.rs"]
-- EMAIL_1: gustavo@nave.rs - `ALLOWED`
-- EMAIL_2: gcdpinho@gmail.com - `NOT ALLOWED`
+```
+npm run migrate:make nome_do_arquivo
 
-The following domains: `nave.rs` and` @nave` are not allowed as they do not satisfy the domain description, given above.
+```
+
+Para rodar o arquivo é necessário:
+
+```
+npm run db:migrate
+
+```
+
+Para excluir a ultima alteração:
+
+```
+npm run db:rollback
+
+```
+
+-   Para adicionar dados no banco, utilizamos o Seeds:
+
+Para criar um seed é necessário:
+
+```
+npm run db:seed
+
+```
+
+-   Etapa 5 - Organizar os arquivos de rotas 
+
+No arquivo index.js da pasta de Rotas foi adicionado a rota de navers, que precisa 
+ser utilizado com v1 no parametro.
+
+Foi adicionado arquivo de rotas dos navers com informações do NaversControllers
+com os métodos GET e POST
+
+ Para que nãoo seja necessário utilizar o token autenticação as rotas dos "navers" 
+ foram colocadas no path do arquivo server.js
+
+
+
+
