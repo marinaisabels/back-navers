@@ -111,7 +111,7 @@ foi possivel fazer a lógica de somente admin poder criar um novo naver.
 -   Para criar uma migração é necessário utilizar os seguintes comandos:<br>
 
 ```
-npm run migrate:make nome_do_arquivo
+npm run knex migrate:make nome_do_arquivo
 
 ```
 
