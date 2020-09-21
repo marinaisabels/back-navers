@@ -6,11 +6,9 @@ export const up = knex =>
         table.date('birthdate').notNullable()
         table.string('job_role').notNullable()
         table.date('admission_date').notNullable()
-        table.string('projects').notNullable()
 
-        table.timestamps(true, true)
+      table.timestamps(true, true)
     })
 
 export const down = knex => 
     knex.schema.dropTableIfExists('navers')   
-
