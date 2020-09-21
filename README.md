@@ -134,8 +134,14 @@ npm run db:rollback
 Para criar um seed é necessário:
 
 ```
-npm run db:seed
+npm run knex seed:make
 
+```
+
+Para rodar o arquivo é necessário:
+
+```
+npm run db:seed
 ```
 
 -   Etapa 5 - Organizar os arquivos de rotas <br>
@@ -146,8 +152,8 @@ ser utilizado com v1 no parametro.
 Foi adicionado arquivo de rotas dos navers com informações do NaversControllers<br>
 com os métodos GET e POST
 
- Para que nãoo seja necessário utilizar o token autenticação as rotas dos "navers" <br>
- foram colocadas no path do arquivo server.js
+Para que nãoo seja necessário utilizar o token autenticação as rotas dos "navers" <br>
+foram colocadas no path do arquivo server.js
 
 
 
