@@ -1,5 +1,3 @@
-// import { v4 } from 'uuid'
-
 import { encryptPassword } from '../../helpers/password'
 
 export const seed = async knex => {

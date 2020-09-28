@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Unauthorized } from 'helpers'
 
 export const getToken = ({ headers }) => {

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Joi from '@hapi/joi'
 
 import { validateSchema } from 'helpers'

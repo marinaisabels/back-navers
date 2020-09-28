@@ -1,20 +1,26 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable indent */
-// import Joi from '@hapi/joi'
+import Joi from '@hapi/joi'
 
-// import { validateSchema } from 'helpers'
+import { validateSchema } from 'helpers'
 
-// const NaversValidate = {
-//   create: () =>
-//     validateSchema({
-//       body: {
-//         name: Joi.string().required(),
-//         birthday: Joi.string().required(),
-//         job_role: Joi.string().required(),
-//         admission_date: Joi.number().required(),
-//         projects: Joi.string().required()
-//       }
-//     })
-// }
+const NaversValidate = {
+    create: () =>
+        validateSchema({
+            body: {
+                name: Joi.string().required(),
+                birthday: Joi.date().required(),
+                admission_date: Joi.date().required(),
+                job_role: Joi.string().required()
+            }
+        }),
+    update: () =>
+        validadeSchema({
+            body: {
+                name: Joi.string().required(),
+                birthday: Joi.date().required(),
+                admission_date: Joi.date().required(),
+                job_role: Joi.string().required()
+            }
+        })
+}
 
-// export default NaversValidate
+export default NaversValidate
