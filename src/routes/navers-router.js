@@ -1,15 +1,16 @@
 import Router from 'koa-router'
 
 import NaversController from 'controllers/navers-controller'
+import NaversValidate from 'validators/navers-schema'
 
 const router = new Router()
 
-router.post('/navers/signup', NaversController.create)
+router.post('/navers/signup', NaversValidade.create(), NaversController.create)
 
 router.get('/navers', NaversController.index)
 router.get('/navers/:id', NaversController.show)
 
-router.put('/navers/:id', NaversController.update)
+router.put('/navers/:id', NaversValidade.update(), NaversController.update)
 
 router.delete('/navers/:id', NaversController.destroy)
 

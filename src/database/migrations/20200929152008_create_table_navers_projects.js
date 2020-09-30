@@ -9,4 +9,4 @@ export const up = knex =>
     })
 
 export const down = knex =>
-  knex.schema.dropTableIfExists('Navers_projects')
+  knex.schema.dropTableIfExists('navers_projects')

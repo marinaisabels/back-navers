@@ -23,7 +23,7 @@ export const update = async ctx => {
 }
 
 export const destroy = ctx =>
-  Projects.query().deleteById(ctx.state.user.id).returning('*')
+  Projects.query().deleteById(ctx.state.navers.id).returning('*')
 
 export default {
   index,
