@@ -28,7 +28,7 @@ export const update = async ctx => {
 }
 
 export const destroy = ctx =>
-  Navers.query().deleteById(ctx.state.navers.id).returning('*')
+  Navers.query().deleteById(ctx.params.navers.id).returning('*')
 
 export default {
   index,
