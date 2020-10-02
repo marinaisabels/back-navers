@@ -13,7 +13,7 @@ const NaversValidate = {
             }
         }),
     update: () =>
-        validadeSchema({
+        validateSchema({
             body: {
                 name: Joi.string().required(),
                 birthday: Joi.date().required(),

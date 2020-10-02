@@ -7,10 +7,8 @@ dotenv.config({
 
 export const JWT_SECRET = process.env.SECRET || 'mysupersecret'
 export const PORT = process.env.PORT || 3000
-export const DATABASE = process.env.DATABASE_URL 
-export const DB_USER = process.env.DB_USER 
-export const DATABASE_NAME = process.env.DATABASE_NAME 
-export const DB_PASSWORD = process.env.DB_PASSWORD 
+export const DATABASE =
+  process.env.DATABASE_URL || 'postgres://USER:PASSWORD@localhost:5432/DATABASE'
 export const DATABASE_TEST =
   process.env.DATABASE_TEST ||
   'postgres://USER:PASSWORD@localhost:5432/DATABASE_TEST'
