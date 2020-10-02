@@ -3,8 +3,7 @@
 
 _____
 ## 💻 Sobre os exercícios
-**[Exercício 1](https://docs.google.com/document/d/1p3Nm2wo6FRpTWeo0wETEVUzGTp8_30Gkp0VWNFu4h6Y/edit?ts=5f593ac8)** <br>
-**[Exercício 2](https://docs.google.com/document/d/1Kxze58Hm_yazWPEeUjpaCJJwPdtHx-Y937z_oeav410/edit)** <br>
+
 **[Certificado Curso Alura -  Modelagem de Banco de Dados Relacional I - Entidades, Relacionamentos e Atributos](https://drive.google.com/file/d/1zJeNtJd3UD4UNcz98mvsfLRyeH93TrK8/view?usp=sharing)**<br>
 **[Certificado Curso Alura -  Modelagem de Banco de Dados Relacional II - Diagrama ER e Modelo Relacional](https://drive.google.com/file/d/15qNz87QIFggIePWy6GIfjbK9eIestVte/view?usp=sharing)**<br>
 **[Certificado Curso Alura - Comunicação - Como se expressar bem e ser compreendido ](https://drive.google.com/file/d/1M4FQVGfIEY5xu1qsa9Xsf87eh3gG0-Qi/view?usp=sharing)**
@@ -17,9 +16,21 @@ _____
 
      - (Index) Rota para listagem dos Navers.
 
-     - (Show) Rota para detalhar informações de um único naver através de seu identificador
+     - (Show) Rota para detalhar informações de um único naver através de seu identificador.
 
-     - (Create) Rota de Criação de Naver
+     - (Create) Rota de Criação de Naver.
+     
+     - (Delete) Rota de deletar Navers.
+     
+- Projects
+
+     - (Index) Rota para listagem de Projetos.
+
+     - (Show) Rota para detalhar informações.
+
+     - (Create) Rota de Criação de Projetos.
+     
+     - (Delete) Rota de deletar Projetos.
 
 ---
 
@@ -158,6 +169,10 @@ com os métodos GET e POST
 
 Para que nãoo seja necessário utilizar o token autenticação as rotas dos "navers" <br>
 foram colocadas no path do arquivo server.js
+
+- Etapa 6  - Utilizando o PostgreSQL 
+
+
 
 
 
