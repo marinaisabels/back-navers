@@ -3,7 +3,17 @@ import Navers from 'models/Navers'
 export const index = () => Navers.query()
 
 export const show = ctx =>
-  Navers.query().findOne({ id: ctx.params.id })
+  Navers.query().findOne({ id: ctx.params.id})
+    .select(
+      'navers.id',
+      'navers.name',
+      'navers.birthdate',
+      'navers.admission_date',
+      'navers.job_role',
+      'p.id',
+      'p.name')
+    .innerJoin('navers_projects', {'navers_projects.id_naver': 'navers.id'})
+    .innerJoin('projects AS p', {'navers_projects.id_projects': 'p.id'})
 
 export const create = async ctx => {
   const { body } = ctx.request

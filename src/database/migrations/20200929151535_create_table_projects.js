@@ -3,8 +3,6 @@ export const up = knex =>
     .createTable('projects', table => {
       table.increments('id').primary()
       table.string('name').notNullable()
-     
-      table.timestamps(true, true)
     })
 
 export const down = knex =>
