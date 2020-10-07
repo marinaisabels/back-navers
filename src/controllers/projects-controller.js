@@ -17,8 +17,7 @@ export const update = async ctx => {
   const { body } = ctx.request
 
   return Projects.query().patchAndFetchById(ctx.params.id, {
-    name: body.name,
-  
+    name: body.name
   })
 }
 

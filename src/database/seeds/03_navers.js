@@ -6,7 +6,8 @@ export const seed = async knex => {
     name: 'Time Nave',
     birthdate: new Date(1990, 10, 10),
     admission_date: new Date(2015, 3, 1),
-    job_role:'Backend'
+    job_role:'Backend', 
+    project: 9
     }
   ])
 };

@@ -9,7 +9,8 @@ const NaversValidate = {
                 name: Joi.string().required(),
                 birthdate: Joi.date().required(),
                 admission_date: Joi.date().required(),
-                job_role: Joi.string().required()
+                job_role: Joi.string().required(),
+                project: Joi.any().required()
             }
         }),
     update: () =>
@@ -18,7 +19,8 @@ const NaversValidate = {
                 name: Joi.string().required(),
                 birthdate: Joi.date().required(),
                 admission_date: Joi.date().required(),
-                job_role: Joi.string().required()
+                job_role: Joi.string().required(),
+                project: Joi.any().required()
             }
         })
 }
