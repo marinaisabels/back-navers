@@ -7,18 +7,20 @@ const NaversValidate = {
         validateSchema({
             body: {
                 name: Joi.string().required(),
-                birthday: Joi.date().required(),
+                birthdate: Joi.date().required(),
                 admission_date: Joi.date().required(),
-                job_role: Joi.string().required()
+                job_role: Joi.string().required(),
+                project: Joi.any().required()
             }
         }),
     update: () =>
         validateSchema({
             body: {
                 name: Joi.string().required(),
-                birthday: Joi.date().required(),
+                birthdate: Joi.date().required(),
                 admission_date: Joi.date().required(),
-                job_role: Joi.string().required()
+                job_role: Joi.string().required(),
+                project: Joi.any().required()
             }
         })
 }
