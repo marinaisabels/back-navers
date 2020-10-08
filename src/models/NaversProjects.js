@@ -1,6 +1,8 @@
 import { Model } from 'objection'
 
-import Role from './Role'
+import Navers from './Navers'
+import Projects from './Projects'
+
 import { baseModel} from './index'
 
 class NaversProjects extends baseModel {
@@ -8,11 +10,16 @@ class NaversProjects extends baseModel {
 
   static relationMapings = {
     role: {
-      relation: Model.BelongsToOneRelation,
-      modelClass: Role,
+      relation: Model.ManyToManyRelation,
+      modelClass: Navers,
+      modelClass:Projects,
       join: {
-        from: 'navers_projects.role_id',
-        to: 'roles.id'
+        from: 'navers_projects.naver_id',
+        to: 'navers.id'
+      },
+      join: {
+        from: 'navers_projects.project_id',
+        to: 'projects.id'
       }
     }
   }

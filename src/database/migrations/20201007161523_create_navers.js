@@ -6,12 +6,7 @@ export const up = knex =>
         table.date('birthdate').notNullable()
         table.date('admission_date').notNullable()
         table.string('job_role').notNullable()
-        table.integer('project').unsigned().notNullable()
-        // table
-        // .foreign('project_id')
-        // .references('id')
-        // .inTable('navers_projects')
-        // .onDelete('CASCADE')
+        table.string('projects').notNullable()
     })
 
 export const down = knex => 

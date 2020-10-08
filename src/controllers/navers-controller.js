@@ -4,19 +4,18 @@ import Navers from 'models/Navers'
 export const index = () => Navers.query()
 
 export const show = ctx =>
-Navers.query().findOne({ 'navers.id': ctx.params.id })
-      .select(
-        'navers.id',
-        'navers.name',
-        'navers.birthdate',
-        'navers.admission_date',
-        'navers.job_role',
-        {'id':'projects.id',
-         'projects.name' : 'projects.name'}
-      )
-      .innerJoin('navers_projects', {'navers_projects.naver_id': 'navers.id'})
-      .innerJoin('projects', {'navers_projects.project_id': 'projects.id'})
-
+Navers.query().findOne({ id:ctx.params.id })
+      // .select(
+      //   'navers.id',
+      //   'navers.name',
+      //   'navers.birthdate',
+      //   'navers.admission_date',
+      //   'navers.job_role',
+      //   'projects.id as id_project',
+      //   'projects.name as project'
+      // )
+      // .innerJoin('navers_projects', {'navers_projects.naver_id': 'navers.id'})
+      // .innerJoin('projects', {'navers_projects.project_id': 'projects.id'})
 
 export const create = async ctx => {
   const { body } = ctx.request
@@ -26,7 +25,7 @@ export const create = async ctx => {
     birthdate: body.birthdate,
     admission_date: body.admission_date,
     job_role: body.job_role,
-    project: body.project
+    projects: body.projects
   })
 }
 
