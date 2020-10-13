@@ -3,8 +3,11 @@ import Navers from 'models/Navers'
 
 export const index = () => Navers.query()
 
-export const show = ctx =>
-Navers.query().findOne({ id:ctx.params.id })
+export const show = ctx => 
+ Navers.query().withGraphFetched('projects')
+.findOne({ id:ctx.params.id })
+
+
       // .select(
       //   'navers.id',
       //   'navers.name',
