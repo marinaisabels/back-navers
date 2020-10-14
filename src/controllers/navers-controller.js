@@ -15,6 +15,8 @@ export const create = async ctx => {
     admission_date: body.admission_date,
     job_role: body.job_role
   })
+  return  Navers.relatedQuery('navers_projects').for(1).insert({id: 3, project_id: 1})
+
 }
 
 export const update = async ctx => {
