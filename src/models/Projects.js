@@ -3,13 +3,14 @@ import { Model } from 'objection'
 import { baseModel } from './index'
 import Navers from './Navers'
 
+
 class Projects extends baseModel {
   static tableName = 'projects'
 
-  static  relationMapings = {
+  static relationMappings = {
       navers: {
         relation: Model.ManyToManyRelation,
-        modelClass: Navers,
+        modelClass: __dirname + '/Navers',
         join: {
           from: 'projects.id',
           through: {

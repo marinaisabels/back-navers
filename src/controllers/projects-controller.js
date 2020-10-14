@@ -9,8 +9,7 @@ export const create = async ctx => {
   const { body } = ctx.request
 
   return Projects.query().insert({
-    name: body.name,
-    navers: body.navers
+    name: body.name
   })
 }
 

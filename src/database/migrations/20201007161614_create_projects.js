@@ -4,7 +4,6 @@ export const up = knex =>
     .createTable('projects', table => {
       table.increments('id').primary()
       table.string('name').notNullable()
-      table.string('navers').notNullable()
     })
 
 export const down = knex =>

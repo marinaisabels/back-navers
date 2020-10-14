@@ -6,8 +6,7 @@ const ProjectsValidate = {
   create: () =>
     validateSchema({
       body: {
-        name: Joi.string().required(),
-        navers:Joi.string().required()
+        name: Joi.string().required()
       }
     }),
 

@@ -6,7 +6,6 @@ export const up = knex =>
         table.date('birthdate').notNullable()
         table.date('admission_date').notNullable()
         table.string('job_role').notNullable()
-        table.string('projects').notNullable()
     })
 
 export const down = knex => 
