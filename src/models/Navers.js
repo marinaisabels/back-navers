@@ -1,18 +1,31 @@
 import { Model } from 'objection'
 
-import Role from './Role'
-import { baseModel} from './index'
+import { baseModel } from './index'
+import Projects from './Projects'
+import NaversProjects from './NaversProjects'
 
 class Navers extends baseModel {
   static tableName = 'navers'
 
-  static relationMapings = {
-    role: {
-      relation: Model.BelongsToOneRelation,
-      modelClass: Role,
+  static relationMappings = {
+    projects: {
+      relation: Model.ManyToManyRelation,
+      modelClass: Projects,
       join: {
-        from: 'navers.role_id',
-        to: 'roles.id'
+        from: 'navers.id',
+        through: {
+          from: 'navers_projects.naver_id',
+          to: 'navers_projects.project_id'
+        },
+        to: 'projects.id'
+      }
+    },
+    navers_projects: {
+      relation: Model.HasManyRelation,
+      modelClass: NaversProjects,
+      join: {
+        from: 'navers.id',
+        to: 'navers_projects.naver_id'
       }
     }
   }

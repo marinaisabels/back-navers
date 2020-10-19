@@ -3,8 +3,7 @@ export const seed = async knex => {
   await knex('projects').insert([
     {
     id: 1,  
-    name: 'Projeto 1',
-    naver_id: 1
+    name: 'Projeto 1'
     }
   ])
 };

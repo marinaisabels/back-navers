@@ -1,33 +1,22 @@
 import Navers from 'models/Navers'
 
-
 export const index = () => Navers.query()
 
-export const show = ctx =>
-Navers.query().findOne({ 'navers.id': ctx.params.id })
-      .select(
-        'navers.id',
-        'navers.name',
-        'navers.birthdate',
-        'navers.admission_date',
-        'navers.job_role',
-        {'id':'projects.id',
-         'projects.name' : 'projects.name'}
-      )
-      .innerJoin('navers_projects', {'navers_projects.naver_id': 'navers.id'})
-      .innerJoin('projects', {'navers_projects.project_id': 'projects.id'})
-
+export const show = ctx => 
+ Navers.query().findOne({ id:ctx.params.id })
+ .withGraphFetched('projects')
 
 export const create = async ctx => {
   const { body } = ctx.request
 
-  return Navers.query().insert({
+  Navers.query().insertGraph({
     name: body.name,
     birthdate: body.birthdate,
     admission_date: body.admission_date,
-    job_role: body.job_role,
-    project: body.project
+    job_role: body.job_role
   })
+  return  Navers.relatedQuery('navers_projects').for(1).insert({id: 3, project_id: 1})
+
 }
 
 export const update = async ctx => {

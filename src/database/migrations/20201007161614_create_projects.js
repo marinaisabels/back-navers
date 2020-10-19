@@ -4,12 +4,6 @@ export const up = knex =>
     .createTable('projects', table => {
       table.increments('id').primary()
       table.string('name').notNullable()
-      table.integer('naver_id').unsigned().notNullable()
-      table
-        .foreign('naver_id')
-        .references('id')
-        .inTable('navers')
-        .onDelete('CASCADE')
     })
 
 export const down = knex =>

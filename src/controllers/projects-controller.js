@@ -3,7 +3,7 @@ import Projects from 'models/Projects'
 export const index = () => Projects.query()
 
 export const show = ctx =>
-  Projects.query().findOne({ id: ctx.params.id })
+  Projects.query().findOne({ id: ctx.params.id }).withGraphFetched('navers')
 
 export const create = async ctx => {
   const { body } = ctx.request
